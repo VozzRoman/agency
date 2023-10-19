@@ -1,0 +1,129 @@
+.page__blog-inner {
+  margin: 112px 0 80px 0;
+}
+
+.page__blog-inner-picture {
+  position: relative;
+  padding: 0 0 49.3% 0;
+  margin: 0 0 80px 0;
+}
+
+.page__blog-inner-picture img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.page__vision-avatar {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 0 24px 0;
+}
+
+.page__vision-img {
+  margin: 0 8px 0 0;
+}
+
+.page__vision-info {
+  color: #394149;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 200%;
+  letter-spacing: 0px;
+}
+
+@media (any-hover: hover) {
+  .page__vision-info:hover {
+    text-decoration: underline;
+  }
+}
+
+.page__vision-info span {
+  margin: 0 0 0 24px;
+}
+
+.page__vision-info span:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 470px) {
+  .page__vision-info {
+    line-height: 120%;
+  }
+  .page__vision-info span {
+    display: block;
+    margin: 0 0 0 0;
+  }
+}
+
+.blog-inner-info {
+  max-width: 752px;
+  margin: 0 auto;
+}
+
+.blog-inner-info__title {
+  color: #1D3444;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 112.5%;
+  letter-spacing: -0.03em;
+  margin: 0 0 32px 0;
+}
+
+@media (max-width: 1310px) {
+  .blog-inner-info__title {
+    font-size: calc(35px + 29 * ((100vw - 320px) / 990));
+  }
+}
+
+.blog-inner-info__text {
+  color: #5B5B5B;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 175%;
+  letter-spacing: 0em;
+  margin: 0 0 48px 0;
+}
+
+.blog-inner-info__text p:not(:last-child) {
+  margin: 0 0 24px 0;
+}
+
+.blog-inner-info__sub-title {
+  color: #0D1317;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 117%;
+  letter-spacing: 0em;
+  margin: 0 0 24px 0;
+}
+
+@media (max-width: 1310px) {
+  .blog-inner-info__sub-title {
+    font-size: calc(30px + 18 * ((100vw - 320px) / 990));
+  }
+}
+
+.blog-inner-info__sub-text {
+  color: #5B5B5B;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 175%;
+}
+
+.blog-inner-info__sub-text p:not(:last-child) {
+  margin: 0 0 24px 0;
+}
+/*# sourceMappingURL=blog-inner.css.map */

@@ -1,0 +1,294 @@
+
+//---------------------------------------------------ABOUT US-----------------------------------------------//
+ 
+//--Миксин Адаптивное свойство (подключать @include adaptive-value("свойство",размер по макету 40px,размер на разрешении 320 20рх, тип = 1)---------//
+$maxWidth: 1920;
+$maxWidthcontainer: 1310;
+@mixin adaptive-value($property, $startSize, $minSize, $type) {
+	$addSize: $startSize - $minSize;
+	@if $type==1 {
+		// Только если меньше контейнера //
+		#{$property}: $startSize + px;
+		@media (max-width: #{$maxWidthcontainer + px}) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthcontainer - 320}));
+		}
+
+	} @else if $type==2 {
+		// Только если больше контейнера //
+		#{$property}: $startSize + px;
+		@media (min-width: #{$maxWidthcontainer + px}) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+		}
+	} @else {
+		// Всегда //
+ 		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+	}
+	
+}
+
+//-----------Organization-----------//
+._page__header-link-active{
+    color: #F58A07;
+    @media (max-width:980px){
+        color: #FFFFFF;
+    }
+}
+
+.page__main{
+    @media (max-width:980px){
+        margin: 80px 0 0 0;
+    }
+}
+.organization {
+}
+.page__organization {
+    margin: 108px 0 128px 0;
+    @media (max-width:980px){
+        margin: 60px 0 128px 0;
+    }
+}
+.page__organization-container {
+}
+._container {
+}
+.page__experience-body {
+}
+.page__organization-body {
+}
+
+.page__organization-items {
+    @media (max-width:980px){
+        padding: 0 0 0 0;
+    }
+}
+.title {
+}
+.page__organization-title{
+    line-height: 112.5%;
+}
+.text {
+}
+._page__experience-text {
+}
+.button {
+}
+.start-section-bth {
+}
+._active-bth {
+    &:hover{
+		background-color: #aa5200;
+	}
+    @media (max-width:980px){
+        display: flex;
+        justify-content: center;
+        margin: 0 0 30px 0;
+    }
+}
+
+.page__organization-picture {
+    
+    flex: 0 1 48.2%;
+    padding: 0 0 50.8% 0;
+    @media (max-width:780px){
+        flex: 0 1 100%;
+        padding: 0 0 90% 0;
+    }
+}
+.page__experience-circle {
+}
+.page__organization-circle {
+
+    top: 550px;
+}
+
+//----------StartUp---------------// 
+
+.startup {
+}
+.page__startup {
+    margin: 0 0 91px 0;
+}
+.page__startup-container {
+}
+.block-holder {
+}
+.block-column .page__startup-column {
+    flex: 0 1 25%;
+}
+
+
+.page__startup-items {
+    padding: 48px 0 37px 0;
+    @media (max-width:980px){
+        padding: 0 0 37px 0;
+    }
+}
+
+//--------------Identification-----------// 
+.identification {
+}
+.page__identification {
+    margin: 0 0 128px 0;
+}
+.page__identification-container {
+}
+
+.page__identification-body {
+    position: relative;
+}
+
+.page__identification-picture {
+    position: relative;
+}
+.page__identification-element{
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    @include adaptive-value("width",286 ,140 ,1 );
+    @include adaptive-value("height",289 ,170 ,1 );
+    background: #F58A07;
+    mix-blend-mode: multiply;
+    border-radius: 20px;
+    @media (max-width:980px){
+        right: 156px;
+    }
+    @media (max-width:780px){
+        right: -20px;
+    }
+  
+
+
+
+}
+
+//-------------Teamwork---------------// 
+.teamwork {
+}
+.page__teamwork {
+    margin: 0 0 128px 0;
+}
+.page__teamwork-container {
+}
+._container {
+}
+.block-box {
+}
+.page__teamwork-box {
+    flex-direction: column;
+    margin: 0 0 64px 0;
+}
+
+
+
+.page__teamwork-title{
+    flex: 0 0 0;
+}
+.page__teamwork-text{
+    flex: 0 0 0;
+}
+.page__teamwork-body{
+    display: flex;
+    margin: 0 -20px;
+    @media (max-width:980px){
+        flex-wrap: wrap;
+    }
+}
+
+.page__teamwork-column {
+    flex: 0 1 25%;
+    padding: 0 20px;
+    @media (max-width:980px){
+        flex: 0 1 50%;
+        margin: 0 0 40px 0;
+    }
+    @media (max-width:640px){
+        flex: 0 1 100%;
+    }
+}
+.page__teamwork-picture {
+    cursor: pointer;
+    position: relative;
+    padding: 0 0 179.9% 0;
+    overflow: hidden;
+    border-radius: 20px;
+    
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    &.active{
+        .page__teamwork-info{
+            bottom: 0;
+            transition: 0.5s;
+        }
+    }
+   
+}
+
+.page__teamwork-info {
+    transition: 0.5s;
+    position: absolute;
+    width: 100%;
+    height: 45%;
+    bottom: -500px;
+    left: 0;
+    background: #252525;
+    opacity: 0.9;
+    border-radius: 20px;
+    padding: 43px 27px 43px 27px;
+}
+
+.teamwork-info__assis {
+    color: #FFFFFF;
+font-size: 14px;
+font-weight: 600;
+line-height: 114%;
+letter-spacing: 0px;
+margin: 0 0 6px 0;
+
+
+
+
+}
+.teamwork-info__name {
+    color: #FFFFFF;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 133%;
+letter-spacing: 0px;
+text-align: left;
+margin: 0 0 6px 0;
+
+
+}
+.eamwork-info__text {
+   color: #FFFFFF;
+font-size: 14px;
+font-weight: 400;
+line-height: 200%;
+
+
+
+}
+
+//-----------------Dream---------------// 
+
+.page__dream{
+    margin: 0 0 128px 0;
+}
+
+
+
+
+//------------News-------------------// 
+
+.page__news{
+    background-color: #DCEAF5;
+    padding: 96px 0 96px 0;
+}
